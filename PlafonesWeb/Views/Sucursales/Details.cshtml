@@ -1,0 +1,60 @@
+﻿@model PlafonesWeb.Models.SucursalesModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SucursalesModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_SUCURSAL_VAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_SUCURSAL_VAR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIRECCION_VAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIRECCION_VAR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TELEFONO_VAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TELEFONO_VAR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAPA_VAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAPA_VAR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RUTA_IMAGEN_VAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RUTA_IMAGEN_VAR)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CVE_SUCURSAL_INT }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,221 @@
+﻿
+
+@model PlafonesWeb.Models.ProductosModels
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script>
+
+    function ZoomImage(src, alt) {
+
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        modal.style.display = "block";
+        modalImg.src = src;
+        captionText.innerHTML = alt;
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    }
+
+</script>
+
+
+<div class="container body-content">
+
+
+
+    <h2 class="FormatoTitutloDetailsProductos">Comunicate con Nosotros y pregunta por el precio especial</h2>
+
+    <div class="containerIndex row">
+
+
+        <div class="form-group ml-5">
+
+            <img id="myImg" src="@Url.Content(Model.RUTADEFOTO_VAR)"
+                 alt="@Url.Content(Model.NOM_PROD_VAR)"
+                 onclick="ZoomImage(this.src, this.alt);"
+                 class="FormaDeContactoDetallesProductos">
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-7">
+            <div class="row">
+
+
+                <div class="col">
+                    <table class="table">
+                        <dl class="dl-horizontal">
+                            <dt class="TextoEncabezadoDetailProduct">
+                                @Html.DisplayNameFor(model => model.NOM_PROD_VAR):
+                                @{
+                                    ViewBag.Title = Model.NOM_PROD_VAR.ToString();
+                                }
+                            </dt>
+
+                            <dd class="TextoDetailProduct">
+                                @Html.DisplayFor(model => model.NOM_PROD_VAR)
+                            </dd>
+                            <dt class="TextoEncabezadoDetailProduct">
+                                @Html.DisplayNameFor(model => model.MARCA_VAR):
+                            </dt>
+
+                            <dd class="TextoDetailProduct">
+                                @Html.DisplayFor(model => model.MARCA_VAR)
+                            </dd>
+
+                            <dt class="TextoEncabezadoDetailProduct">
+                                @Html.DisplayNameFor(model => model.COSTO_PROMEDIO_DEC):
+                            </dt>
+
+                            <dd class="TextoDetailProduct">
+                                @Html.DisplayFor(model => model.COSTO_PROMEDIO_DEC)    MXN IVA Incluido.
+                            </dd>
+
+
+
+                            @{
+
+                                if (Model.UNIDAD_MEDIDA_VAR != String.Empty && Model.UNIDAD_MEDIDA_VAR != null)
+                                {
+                                    <div class="form-inline">
+
+                                    </div>
+                                    <dt class="TextoEncabezadoDetailProduct">
+                                        @Html.DisplayNameFor(model => model.UNIDAD_MEDIDA_VAR):
+                                    </dt>
+
+                                    <dd class="TextoDetailProduct">
+                                        @Html.DisplayFor(model => model.UNIDAD_MEDIDA_VAR)
+                                    </dd>
+
+                                }
+
+
+
+                                if (Model.ANCHO_VAR != String.Empty && Model.ANCHO_VAR != null)
+                                {
+                                    <dt class="TextoEncabezadoDetailProduct">
+                                        @Html.DisplayNameFor(model => model.ANCHO_VAR):
+                                    </dt>
+
+                                    <dd class="TextoDetailProduct">
+                                        @Html.DisplayFor(model => model.ANCHO_VAR)
+                                    </dd>
+
+                                }
+
+
+                                if (Model.ALTO_VAR != String.Empty && Model.ALTO_VAR != null)
+                                {
+
+
+                                    <dt class="TextoEncabezadoDetailProduct">
+                                        @Html.DisplayNameFor(model => model.ALTO_VAR):
+                                    </dt>
+
+                                    <dd class="TextoDetailProduct">
+                                        @Html.DisplayFor(model => model.ALTO_VAR)
+                                    </dd>
+
+                                }
+
+
+                                if (Model.ESPESOR_VAR != String.Empty && Model.ESPESOR_VAR != null)
+                                {
+                                    <dt class="TextoEncabezadoDetailProduct">
+                                        @Html.DisplayNameFor(model => model.ESPESOR_VAR):
+                                    </dt>
+
+                                    <dd class="TextoDetailProduct">
+                                        @Html.DisplayFor(model => model.ESPESOR_VAR)
+                                    </dd>
+
+                                }
+
+
+                                if (Model.PESO_DEC > 0)
+                                {
+                                    <dt class="TextoEncabezadoDetailProduct">
+                                        @Html.DisplayNameFor(model => model.PESO_DEC):
+                                    </dt>
+
+                                    <dd class="TextoDetailProduct">
+                                        @Html.DisplayFor(model => model.PESO_DEC) KG.
+                                    </dd>
+
+                                }
+
+
+                            }
+
+
+
+
+                            <div class="form-row">
+                                <dt class="TextoEncabezadoDetailProduct">
+                                    @Html.DisplayNameFor(model => model.SUG_USO_VAR):
+                                </dt>
+                                <dd class="TextoDetailProduct">
+                                    @Html.DisplayFor(model => model.SUG_USO_VAR)
+                                </dd>
+                            </div>
+
+
+                            <dd class="TextoDetailProduct">
+                                @Html.DisplayFor(model => model.SUG_USO_VAR)
+                            </dd>
+
+                            <div class="col">
+                                @using (Html.BeginForm("DataSheet", "Productos"))
+                                {
+
+                                    <input name="FichaTecnicaName" type="hidden" value="@Model.FICHA_TECNICA_URL_VAR " />
+
+                                    <button class="btn btn-danger" style="background-color:#F08034" type="submit">
+                                        Model
+                                        <img src="~/img/DisenioDeplegadoProds/icono-ficha-tecnica-1.png" width="70px" height="100px" style="background-color:#F08034">
+                                    </button>
+
+                                }
+                            </div>
+
+                        </dl>
+
+                    </table>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+

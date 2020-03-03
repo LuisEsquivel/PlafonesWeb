@@ -1,0 +1,533 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.TextoEncabezadoMainPageOrange {
+    text-align: center;
+    color: #F08034;
+    font-weight: bold;
+}
+
+.TextoEncabezadoMainPageWhite {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.FormaDeContactoIndex {
+    text-align: "center";
+    background-color: #001049;
+    color: white;
+    font-weight: bold;
+    align-content: center;
+}
+
+.containerIndex {
+    /*position: absolute;*/
+    /*padding-top: 60px;*/
+    /*left: 50%;*/
+    width: 100%;
+    text-align: center;
+    /*transform: translatex(-50%);*/
+    /*align-items: center;*/
+}
+
+.subcontainerIndex {
+    /*position: absolute;*/
+    position: relative;
+    /*left: 50%;*/
+    width: 100%;
+    /*transform: translatex(-50%);*/
+    align-items: center;
+    width: 100%;
+    /*padding-left: 40px;*/
+}
+
+.TituloIndexSucursales {
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.DetalleIndexSucursales {
+    text-align: center;
+    font-size: medium;
+}
+
+.ImgSucursalesIndex {
+    align-content: center;
+    width: 100%;
+}
+
+.imgInstalacion {
+    align-content: center;
+    width: 130%;
+}
+
+.ImgRewards {
+    align-content: center;
+    width: 100%;
+    padding-top: 40px;
+}
+
+.TextoEncabezadoRewards {
+    text-align: center;
+    color: #F08034;
+    font-weight: bold;
+}
+
+.LeyendaInstalaciones {
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+}
+
+.TituloInstalaciones {
+    text-align: center;
+    color: #F08034;
+    font-weight: bold;
+}
+
+.DetalleTextFormSucursales {
+    text-align: center;
+    font-size: medium;
+    vertical-align: central;
+    text-align: center;
+    height: 100%;
+    padding-top: 40px;
+    font-weight: bold;
+}
+
+.GridSucuralesFormSucursales {
+    border-top: solid;
+    border-color: #F08034;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+
+
+.card-bordes {
+    /*border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;*/
+    border-color: #F08034;
+}
+
+.card-font-detail {
+    text-align: center;
+    color: #F08034;
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.card-product:after {
+    content: "";
+    display: table;
+    clear: both;
+    visibility: hidden;
+}
+
+.card-product .price-new, .card-product .price {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    border-color: #F08034;
+    padding-bottom: 10px;
+    font-size: medium;
+    font-family: Calibri;
+}
+
+.card-product .price-old {
+    color: #999;
+}
+
+.card-product .img-wrap {
+    padding-top: 5px;
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+    .card-product .img-wrap img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+.card-product .info-wrap {
+    overflow: hidden;
+    padding: 15px;
+    padding-top: 5px;
+    height: 130px;
+    border-top: 1px solid;
+    border-color: #F08034;
+}
+
+.card-product .action-wrap {
+    padding-top: 4px;
+    margin-top: 4px;
+    align-content: flex-end;
+    width: 100%;
+}
+
+.card-product .bottom-wrap {
+    padding: 15px;
+    border-top: 1px solid #F08034;
+}
+
+.card-product .title {
+    margin-top: 0;
+}
+
+.my-flex-card > div > div.card {
+    height: calc(100% - 15px);
+    margin-bottom: 15px;
+}
+
+.TextoEncabezadoDetailProduct {
+    text-align: left;
+    color: #F08034;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.TextoDetailProduct {
+    text-align: left;
+    color: black;
+    font-family: Gadugi;
+    font-weight: bold;
+    font-size: large;
+}
+
+
+.fondoColorInstitucional {
+    background-color: #001049;
+}
+
+.TopIndex {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /*align-content:center;
+    width:100%;*/
+    /*padding-left:50px;*/
+}
+
+.navBarDesignpropio {
+    /*background-color: #001049;*/
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    /*transform: translatex(-50%);*/
+}
+
+.TablaMenuMain {
+    border-bottom: solid;
+    border-top: solid;
+    border-color: #F08034;
+    background-color: #172C80;
+}
+
+
+
+.navBarDesignProductos {
+    width: 100%;
+    color: #F08034;
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.TablaMenuProductos {
+    text-align: "center";
+    background-color: white;
+    font-size: large;
+    font-weight: bold;
+    border-bottom: solid;
+    border-top: solid;
+    border-color: #F08034;
+    width: 100%;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+    .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -1px;
+    }
+
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #F08034;
+    background-color: transparent;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+    .dropdown-submenu > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        margin-left: -1px;
+        -webkit-border-radius: 0 6px 6px 6px;
+        -moz-border-radius: 0 6px 6px 6px;
+        border-radius: 0 6px 6px 6px;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-submenu > a:after {
+        display: block;
+        content: " ";
+        float: right;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-left-color: #cccccc;
+        margin-top: 5px;
+        margin-right: -10px;
+    }
+
+    .dropdown-submenu:hover > a:after {
+        border-left-color: #ffffff;
+    }
+
+    .dropdown-submenu.pull-left {
+        float: none;
+    }
+
+        .dropdown-submenu.pull-left > .dropdown-menu {
+            left: -100%;
+            margin-left: 10px;
+            -webkit-border-radius: 6px 0 6px 6px;
+            -moz-border-radius: 6px 0 6px 6px;
+            border-radius: 6px 0 6px 6px;
+        }
+
+.formatoItemsMenu {
+    color: #F08034;
+    font-size: large;
+}
+
+.BannerPrincipalFormato {
+    margin-left: 0;
+}
+
+.FormatoTitutloDetailsProductos {
+    text-align: center;
+    color: #F08034;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.FormaDeContactoDetallesProductos {
+    text-align: "center";
+    /*background-color: #001049;*/
+    color: black;
+    font-weight: bold;
+    align-content: center;
+    padding-top: 15px;
+}
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    #myImg:hover {
+        opacity: 0.7;
+    }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+
+
+
+.Myfooter {
+    bottom: 0;
+    width: 100%;
+    background-color: #172C80;
+    color: white;
+    text-align: center;
+}
+
+
+.navbar {
+    /*overflow: hidden;*/
+    /*position: fixed;*/ /* Set the navbar to fixed position */
+
+    position: fixed; /*Fixed ya que queremos que la posición sea en relación al navegador*/
+    top: 0; /*El valor 0 indica que va a quedar arriba de todo*/
+    left: 0; /*Para que el menu se ubique siempre en la parte izquierda de la pantalla*/
+    width: 100%; /*100% para que ocupe todo el ancho del navegador*/
+}
+
+
+
+
+    .navbar a {
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        color: #F08034 !important;
+
+    }
+
+        .navbar a:hover {
+            background-color: white;
+        }
+
+
+
+
+option:hover {
+   
+    background-color: #E74C3C;
+}
+
+
+.dropdown li a:hover  {
+    color: #F08034 !important;
+    background-color: #E74C3C;
+}

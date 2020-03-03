@@ -1,0 +1,63 @@
+﻿@model IEnumerable<PlafonesWeb.Models.SucursalesModel>
+
+@{
+    ViewBag.Title = "Nuestras Sucursales Plafones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container body-content">
+
+
+    <div class="containerIndex row d-flex justify-content-center">
+        <h2 class="TextoEncabezadoMainPageOrange">Sucursales</h2>
+
+
+
+        <div class="container">
+
+            @foreach (var item in Model)
+            {
+
+
+                <div class="row GridSucuralesFormSucursales pt-2 pb-2">
+
+                    <h6>  @Html.DisplayFor(modelItem => item.NOMBRE_SUCURSAL_VAR) </h6>
+
+                    <div class="row">
+
+                        <div class="col-sm">
+
+                            @if (!string.IsNullOrEmpty(item.RUTA_IMAGEN_VAR))
+                            {
+                                <img class="img-fluid" src="@Url.Content(item.RUTA_IMAGEN_VAR)" alt="Image" style="width:300px;height:300px;max-width: 100%; height: auto;" />
+                            }
+                        </div>
+
+                        <div class="col-sm">
+                            <h6> @Html.DisplayFor(modelItem => item.DIRECCION_VAR) </h6>
+                        </div>
+
+                        <div class="col-sm">
+                            <h6> <a href="tel:+52+@Html.DisplayFor(modelItem => item.TELEFONO_VAR)">   @Html.DisplayFor(modelItem => item.TELEFONO_VAR) </a> </h6>
+                        </div>
+
+                        <div class="col-sm">
+                            @if (!string.IsNullOrEmpty(item.MAPA_VAR))
+                            {
+                                <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 200px">
+                                    <iframe class="img-fluid" src="@Url.Content(item.MAPA_VAR)" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+
+            }
+
+        </div>
+
+    </div>
+
+
+</div>
+

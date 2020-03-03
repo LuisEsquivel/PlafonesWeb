@@ -1,0 +1,101 @@
+﻿
+
+@model List<PlafonesWeb.Models.ProductosModels>
+
+@{
+    ViewBag.Title = "TABLAROCA, DUROCK Y PLAFONES EN MONTERREY";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+
+
+<div class="container body-content">
+
+
+    @if (@ViewBag.message == "PRODUCTO NO ENCONTRADO")
+    {
+
+        <div class="col-sm pr-5">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
+                <h4> <i class="icon fade fa-check"> </i> No se encontró ningún producto con ese nombre</h4>
+            </div>
+        </div>
+
+    }
+
+
+    <br />
+    <br />
+
+
+
+
+    <div class="containerIndex row my-flex-card">
+
+
+        @foreach (var item in Model)
+        {
+
+            <div class="col-lg-4 col-sm-12 card-bordes">
+
+
+                <figure class="card card-product">
+                    <div class="img-wrap justify-content-center ">
+                        <img src="@Url.Content(item.RUTADEFOTO_VAR)">
+                    </div>
+
+                    <figcaption class="info-wrap justify-content-center  align-self-center">
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="title card-font-detail">@Html.DisplayFor(modelItem => item.NOM_PROD_VAR)</h6>
+                            </div>
+                        </div>
+
+
+                        <div class="row d-flex justify-content-center  align-self-center  mb-5 pb-5">
+                            <div class="col-sm-12">
+                                <h5 class="price-new">Su Precio:  @Html.DisplayFor(modelItem => item.COSTO_PROMEDIO_DEC): MXN IVA Incluido</h5>
+
+
+
+                                @using (Html.BeginForm("DataSheet", "Productos"))
+                                {
+
+
+                                    <input name="FichaTecnicaName" type="hidden" value="@item.FICHA_TECNICA_URL_VAR" />
+
+
+
+
+                                    <a href="~/Productos/Details?id=@item.CVE_PROD_VAR" class="btn btn-primary btn-sm" style="background-color:#F08034"> Detalles </a>
+
+                                    <button class="btn btn-danger btn-sm" type="submit">
+                                        Ficha Técnica
+                                        @*<img src="~/img/DisenioDeplegadoProds/icono-ficha-tecnica-1.png"  width="50" height="30">*@
+                                    </button>
+
+                                }
+
+                                <br />
+                                <br />
+
+                            </div>
+
+
+
+
+
+                            <!-- action-wrap -->
+                        </div>
+                    </figcaption>
+                </figure> <!-- card // -->
+            </div> <!-- col // -->
+        }
+    </div>
+</div>
+
+

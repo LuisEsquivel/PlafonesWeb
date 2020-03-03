@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Contactate con nosotros";
+}
+
+
+<div class="container body-content">
+
+
+    <br />
+
+    <div class="row">
+        <div class="col-sm d-flex justify-content-center TituloInstalaciones">
+            <h3>Gracias por ponerse en contacto con nosotros:</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            <div class="embed-responsive embed-responsive-16by9">
+                <img class="embed-responsive-item" src="~/img/Contacto/contacto.jpg" />
+            </div>
+        </div>
+
+
+
+        <div class="col-sm-12 col-md-4 col-xl-3 d-flex justify-content-center mt-5">
+ 
+            <form action="/Home/EmailInstalacion" method="post">
+
+
+                <div class="form-group">
+                    <h6>Nombre (requerido)</h6>
+                    <input type="text" class="form-control" name="NOMBRE_VAR" placeholder="Nombre" maxlength="50" required>
+                </div>
+
+
+                <div class="form-group">
+                    <h6>Tú correo electrónico (requerido)</h6>
+                    <input type="text" class="form-control" name="EMAIL_VAR" placeholder="Tu correo electrónico" maxlength="50" required>
+                </div>
+
+                <div class="form-group">
+                    <h6>Teléfono</h6>
+                    <input type="tel" class="form-control" name="TELEFONO_VAR" placeholder="Teléfono" maxlength="10" required>
+                </div>
+
+                <div class="form-group">
+                    <h5>Mensaje</h5>
+                    <textarea class="form-control" name="MENSAJE_VAR" placeholder="Mensaje" maxlength="200" required> </textarea>
+                </div>
+
+
+
+                <div class="form-group d-flex justify-content-xl-start d-flex justify-content-md-start  d-flex justify-content-sm-center d-flex justify-content-center">
+                    <input type="hidden" value="Contact/Email" name="ORIGEN_VAR" />
+                    <input type="submit" value="Enviar" class="btn btn-danger" />
+                </div>
+
+
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
