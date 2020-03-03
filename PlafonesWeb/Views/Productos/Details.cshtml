@@ -34,188 +34,194 @@
 
 </script>
 
-
 <div class="container body-content">
 
+    <br />
+    <br />
+    <br />
+
+    <div class="container-fluid">
 
 
-    <h2 class="FormatoTitutloDetailsProductos">Comunicate con Nosotros y pregunta por el precio especial</h2>
-
-    <div class="containerIndex row">
+        <h2 class="text-center ColorOrange">  Comunicate con Nosotros y pregunta por el precio especial </h2>
 
 
-        <div class="form-group ml-5">
+        <table class="table  text-centered">
 
-            <img id="myImg" src="@Url.Content(Model.RUTADEFOTO_VAR)"
-                 alt="@Url.Content(Model.NOM_PROD_VAR)"
-                 onclick="ZoomImage(this.src, this.alt);"
-                 class="FormaDeContactoDetallesProductos">
+            @*<thead>
+                <tr>
+                    <td colspan="2" class="h3 ColorOrange">
+                        Comunicate con Nosotros y pregunta por el precio especial
+                    </td>
+                </tr>
+            </thead>*@
+ 
+            <tr class="text-center">
 
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-                <span class="close">&times;</span>
-                <img class="modal-content" id="img01">
-                <div id="caption"></div>
-            </div>
+                <td colspan="2" >
+                    <img id="myImg" src="@Url.Content(Model.RUTADEFOTO_VAR)"
+                         alt="@Url.Content(Model.NOM_PROD_VAR)"
+                         onclick="ZoomImage(this.src, this.alt);"
+                         class="FormaDeContactoDetallesProductos">
 
-        </div>
-
-
-
-        <div class="col-md-7">
-            <div class="row">
-
-
-                <div class="col">
-                    <table class="table">
-                        <dl class="dl-horizontal">
-                            <dt class="TextoEncabezadoDetailProduct">
-                                @Html.DisplayNameFor(model => model.NOM_PROD_VAR):
-                                @{
-                                    ViewBag.Title = Model.NOM_PROD_VAR.ToString();
-                                }
-                            </dt>
-
-                            <dd class="TextoDetailProduct">
-                                @Html.DisplayFor(model => model.NOM_PROD_VAR)
-                            </dd>
-                            <dt class="TextoEncabezadoDetailProduct">
-                                @Html.DisplayNameFor(model => model.MARCA_VAR):
-                            </dt>
-
-                            <dd class="TextoDetailProduct">
-                                @Html.DisplayFor(model => model.MARCA_VAR)
-                            </dd>
-
-                            <dt class="TextoEncabezadoDetailProduct">
-                                @Html.DisplayNameFor(model => model.COSTO_PROMEDIO_DEC):
-                            </dt>
-
-                            <dd class="TextoDetailProduct">
-                                @Html.DisplayFor(model => model.COSTO_PROMEDIO_DEC)    MXN IVA Incluido.
-                            </dd>
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+                </td>
 
 
+            </tr>
 
-                            @{
+            <tr>
+                <td class="h5 ColorOrange">
+                    @Html.DisplayNameFor(model => model.NOM_PROD_VAR):
+                </td>
+                <td class="h5">
+                    @Html.DisplayFor(model => model.NOM_PROD_VAR)
+                </td>
+            </tr>
 
-                                if (Model.UNIDAD_MEDIDA_VAR != String.Empty && Model.UNIDAD_MEDIDA_VAR != null)
-                                {
-                                    <div class="form-inline">
+            <tr>
+                <td class="h5 ColorOrange">
+                    @Html.DisplayNameFor(model => model.MARCA_VAR):
+                </td>
+                <td class="h5">
+                    @Html.DisplayFor(model => model.NOM_PROD_VAR)
+                </td>
+            </tr>
 
-                                    </div>
-                                    <dt class="TextoEncabezadoDetailProduct">
-                                        @Html.DisplayNameFor(model => model.UNIDAD_MEDIDA_VAR):
-                                    </dt>
-
-                                    <dd class="TextoDetailProduct">
-                                        @Html.DisplayFor(model => model.UNIDAD_MEDIDA_VAR)
-                                    </dd>
-
-                                }
+            <tr>
+                <td class="h5 ColorOrange">
+                    @Html.DisplayNameFor(model => model.COSTO_PROMEDIO_DEC):
+                </td>
+                <td class="h5">
+                    @Html.DisplayFor(model => model.COSTO_PROMEDIO_DEC)    MXN IVA Incluido.
+                </td>
+            </tr>
 
 
 
-                                if (Model.ANCHO_VAR != String.Empty && Model.ANCHO_VAR != null)
-                                {
-                                    <dt class="TextoEncabezadoDetailProduct">
-                                        @Html.DisplayNameFor(model => model.ANCHO_VAR):
-                                    </dt>
+            @{
 
-                                    <dd class="TextoDetailProduct">
-                                        @Html.DisplayFor(model => model.ANCHO_VAR)
-                                    </dd>
+                if (Model.UNIDAD_MEDIDA_VAR != String.Empty && Model.UNIDAD_MEDIDA_VAR != null)
+                {
 
-                                }
+                    <tr>
+                        <td class="h5 ColorOrange">
+                            @Html.DisplayNameFor(model => model.UNIDAD_MEDIDA_VAR):
+                        </td>
+                        <td class="h5 text-dark">
+                            @Html.DisplayFor(model => model.UNIDAD_MEDIDA_VAR)
+                        </td>
+                    </tr>
 
-
-                                if (Model.ALTO_VAR != String.Empty && Model.ALTO_VAR != null)
-                                {
-
-
-                                    <dt class="TextoEncabezadoDetailProduct">
-                                        @Html.DisplayNameFor(model => model.ALTO_VAR):
-                                    </dt>
-
-                                    <dd class="TextoDetailProduct">
-                                        @Html.DisplayFor(model => model.ALTO_VAR)
-                                    </dd>
-
-                                }
-
-
-                                if (Model.ESPESOR_VAR != String.Empty && Model.ESPESOR_VAR != null)
-                                {
-                                    <dt class="TextoEncabezadoDetailProduct">
-                                        @Html.DisplayNameFor(model => model.ESPESOR_VAR):
-                                    </dt>
-
-                                    <dd class="TextoDetailProduct">
-                                        @Html.DisplayFor(model => model.ESPESOR_VAR)
-                                    </dd>
-
-                                }
-
-
-                                if (Model.PESO_DEC > 0)
-                                {
-                                    <dt class="TextoEncabezadoDetailProduct">
-                                        @Html.DisplayNameFor(model => model.PESO_DEC):
-                                    </dt>
-
-                                    <dd class="TextoDetailProduct">
-                                        @Html.DisplayFor(model => model.PESO_DEC) KG.
-                                    </dd>
-
-                                }
-
-
-                            }
+                }
 
 
 
+                if (Model.ANCHO_VAR != String.Empty && Model.ANCHO_VAR != null)
+                {
 
-                            <div class="form-row">
-                                <dt class="TextoEncabezadoDetailProduct">
-                                    @Html.DisplayNameFor(model => model.SUG_USO_VAR):
-                                </dt>
-                                <dd class="TextoDetailProduct">
-                                    @Html.DisplayFor(model => model.SUG_USO_VAR)
-                                </dd>
-                            </div>
+                    <tr>
+                        <td class="h5 ColorOrange">
+                            @Html.DisplayNameFor(model => model.ANCHO_VAR):
+                        </td>
+                        <td class="h5 text-dark">
+                            @Html.DisplayFor(model => model.ANCHO_VAR)
+                        </td>
+                    </tr>
 
-
-                            <dd class="TextoDetailProduct">
-                                @Html.DisplayFor(model => model.SUG_USO_VAR)
-                            </dd>
-
-                            <div class="col">
-                                @using (Html.BeginForm("DataSheet", "Productos"))
-                                {
-
-                                    <input name="FichaTecnicaName" type="hidden" value="@Model.FICHA_TECNICA_URL_VAR " />
-
-                                    <button class="btn btn-danger" style="background-color:#F08034" type="submit">
-                                        Model
-                                        <img src="~/img/DisenioDeplegadoProds/icono-ficha-tecnica-1.png" width="70px" height="100px" style="background-color:#F08034">
-                                    </button>
-
-                                }
-                            </div>
-
-                        </dl>
-
-                    </table>
-                </div>
-
-            </div>
+                }
 
 
-        </div>
+                if (Model.ALTO_VAR != String.Empty && Model.ALTO_VAR != null)
+                {
+                    <tr>
+                        <td class="h5 ColorOrange">
+                            @Html.DisplayNameFor(model => model.ALTO_VAR):
+                        </td>
+                        <td class="h5 text-dark">
+                            @Html.DisplayFor(model => model.ANCHO_VAR)
+                        </td>
+                    </tr>
+                }
 
+
+                if (Model.ESPESOR_VAR != String.Empty && Model.ESPESOR_VAR != null)
+                {
+                    <tr>
+                        <td class="h5 ColorOrange">
+                            @Html.DisplayNameFor(model => model.ESPESOR_VAR):
+                        </td>
+                        <td class="h5 text-dark">
+                            @Html.DisplayFor(model => model.ESPESOR_VAR)
+                        </td>
+                    </tr>
+                }
+
+
+                if (Model.PESO_DEC > 0)
+                {
+                    <tr>
+                        <td class="h5 ColorOrange">
+                            @Html.DisplayNameFor(model => model.PESO_DEC):
+                        </td>
+
+                        <td class="h5 text-dark">
+                            @Html.DisplayFor(model => model.PESO_DEC) KG.
+                        </td>
+                    </tr>
+
+                }
+
+
+            }
+
+
+
+
+            <tr>
+                <td class="h5 ColorOrange">
+                    @Html.DisplayNameFor(model => model.SUG_USO_VAR):
+                </td>
+
+                <td class="h5 text-dark">
+                    @Html.DisplayFor(model => model.SUG_USO_VAR)
+                </td>
+            </tr>
+
+
+
+
+            <tr class="text-right">
+                <td colspan="2">
+                    @using (Html.BeginForm("DataSheet", "Productos"))
+                    {
+
+                        <input name="FichaTecnicaName" type="hidden" value="@Model.FICHA_TECNICA_URL_VAR " />
+
+                        <button class="btn btn-danger" style="background-color:#F08034" type="submit">
+                            Model
+                            <img src="~/img/DisenioDeplegadoProds/icono-ficha-tecnica-1.png" width="70px" height="100px" style="background-color:#F08034">
+                        </button>
+
+                    }
+                </td>
+            </tr>
+
+    </table>
+
+</div>
 
     </div>
 
 
-</div>
+
+
+
+
+
 

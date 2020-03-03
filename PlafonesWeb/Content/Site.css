@@ -531,3 +531,21 @@ option:hover {
     color: #F08034 !important;
     background-color: #E74C3C;
 }
+
+.ColorOrange {
+    color: #F08034
+}
+
+.ColorBlue {
+    color: #172C80
+}
+
+
+    
+
+.table{
+    border-radius: 5px;
+    width: 50%;
+    margin: 0 auto;
+    float: none;
+}
