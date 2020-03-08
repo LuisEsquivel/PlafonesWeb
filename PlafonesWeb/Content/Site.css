@@ -549,3 +549,8 @@ option:hover {
     margin: 0 auto;
     float: none;
 }
+
+
+.card {
+    min-height: 300px;
+}
