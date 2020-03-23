@@ -1,6 +1,11 @@
-﻿body {
+﻿/*body {
     padding-top: 50px;
     padding-bottom: 20px;
+}*/
+
+body {
+    margin :0;
+    padding:0;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,15 +29,16 @@ textarea {
 }
 
 
-body {
+/*body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
+}*/
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+   
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -494,13 +500,13 @@ textarea {
 
 
 .navbar {
-    /*overflow: hidden;*/
+    /*/*overflow: hidden;*/
     /*position: fixed;*/ /* Set the navbar to fixed position */
-
-    position: fixed; /*Fixed ya que queremos que la posición sea en relación al navegador*/
+    /*position: fixed;*/ /*Fixed ya que queremos que la posición sea en relación al navegador*/
     top: 0; /*El valor 0 indica que va a quedar arriba de todo*/
     left: 0; /*Para que el menu se ubique siempre en la parte izquierda de la pantalla*/
     width: 100%; /*100% para que ocupe todo el ancho del navegador*/
+    position: relative;
 }
 
 
@@ -515,21 +521,23 @@ textarea {
     }
 
         .navbar a:hover {
-            background-color: white;
+            background-color: lightgray;
+            /*background-color: #172C80;*/
         }
 
 
 
 
 option:hover {
-   
-    background-color: #E74C3C;
+    /*background-color: #E74C3C;*/
+    background-color: #172C80;
 }
 
 
-.dropdown li a:hover  {
+.dropdown li a:hover {
     color: #F08034 !important;
-    background-color: #E74C3C;
+    /*background-color: #E74C3C;*/
+    background-color: #172C80;
 }
 
 .ColorOrange {
@@ -554,3 +562,5 @@ option:hover {
 .card {
     min-height: 300px;
 }
+
+
