@@ -30,23 +30,23 @@
 
                 <div class="form-group">
                     <h6>Nombre (requerido)</h6>
-                    <input type="text" class="form-control" name="NOMBRE_VAR" placeholder="Nombre" maxlength="50" required>
+                    <input type="text" class="form-control" name="NOMBRE_VAR" placeholder="Nombre" maxlength="50" minlength="4" required>
                 </div>
 
 
                 <div class="form-group">
                     <h6>Tú correo electrónico (requerido)</h6>
-                    <input type="text" class="form-control" name="EMAIL_VAR" placeholder="Tu correo electrónico" maxlength="50" required>
+                    <input type="email" class="form-control" name="EMAIL_VAR" placeholder="Tu correo electrónico" maxlength="50" required>
                 </div>
 
                 <div class="form-group">
                     <h6>Teléfono</h6>
-                    <input type="tel" class="form-control" name="TELEFONO_VAR" placeholder="Teléfono" maxlength="10" required>
+                    <input type="text" class="form-control soloNumeros" name="TELEFONO_VAR" placeholder="Teléfono" maxlength="10" minlenth="10" required>
                 </div>
 
                 <div class="form-group">
                     <h5>Mensaje</h5>
-                    <textarea class="form-control" name="MENSAJE_VAR" placeholder="Mensaje" maxlength="200" required> </textarea>
+                    <textarea id="textArea" class="form-control" name="MENSAJE_VAR" placeholder="Mensaje" maxlength="200" minlength="10" required></textarea>
                 </div>
 
 

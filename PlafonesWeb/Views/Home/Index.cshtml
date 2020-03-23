@@ -6,32 +6,29 @@
 
 
 
+@if (@ViewBag.message == "Correo Enviado")
+{
 
-        @if (@ViewBag.message == "Correo Enviado")
-        {
+    <div class="col">
+        <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
+            <h4> <i class="icon fade fa-check"> </i> Correo Enviado </h4>
+        </div>
+    </div>
 
-            <div class="col">
-                <div class="alert alert-success alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
-                    <h4> <i class="icon fade fa-check"> </i> Correo Enviado </h4>
-                    @ViewBag.message;
-                </div>
-            </div>
+}
 
-        }
+@if (@ViewBag.message == "Problema al enviar correo")
+{
 
-        @if (@ViewBag.message == "Problema al enviar correo")
-        {
+    <div class="col">
+        <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
+            <h4> <i class="icon fade fa-warning"> </i> Correo No Enviado </h4>
+        </div>
+    </div>
 
-            <div class="col">
-                <div class="alert alert-warning alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
-                    <h4> <i class="icon fade fa-warning"> </i> Correo No Enviado </h4>
-                    @ViewBag.message;
-                </div>
-            </div>
-
-        }
+}
 
 
 
@@ -40,11 +37,10 @@
 <div class="container body-content">
 
 
-
     <div class="row mt-5">
         <div class="col-sm">
-            <div class="embed-responsive embed-responsive-16by9" >
-                <img class="embed-responsive-item" src="~/img/bannerbgpc-1024x299.jpg"  />
+            <div class="embed-responsive embed-responsive-16by9">
+                <img class="embed-responsive-item" src="~/img/bannerbgpc-1024x299.jpg" />
             </div>
         </div>
 
@@ -52,7 +48,7 @@
 
         <div class="col-sm-12 col-md-4 col-xl-3 d-flex justify-content-center">
             <br />
-            <form action="/Home/Email" method="post">
+            <form action="/Home/Email" method="post" onSubmit="return validar();">
 
                 <div class="form-group">
                     <h6>Nombre (requerido)</h6>
@@ -62,20 +58,18 @@
 
                 <div class="form-group">
                     <h6>Tú correo electrónico (requerido)</h6>
-                    <input type="text" class="form-control" name="EMAIL_VAR" placeholder="Tu correo electrónico" maxlength="50" required>
+                    <input type="email"  class="form-control" name="EMAIL_VAR" placeholder="Tu correo electrónico" maxlength="50" minlength="4" required>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" name="miFormulario" id="miFormulario">
                     <h6>Teléfono</h6>
-                    <input type="tel" class="form-control" name="TELEFONO_VAR" placeholder="Teléfono" maxlength="10" required>
+                    <input type="text" class="form-control soloNumeros"  name="TELEFONO_VAR"  placeholder="Teléfono" maxlength="10" minlength="10" required>
                 </div>
 
                 <div class="form-group">
                     <h6>Mensaje</h6>
-                    <textarea class="form-control" name="MENSAJE_VAR" placeholder="Mensaje" maxlength="200" required> </textarea>
+                    <textarea id="textArea" class="form-control" name="MENSAJE_VAR" placeholder="Mensaje" maxlength="200" minlength="10" required></textarea>
                 </div>
-
-
 
 
                 <div class="form-group d-flex justify-content-xl-start d-flex justify-content-md-start  d-flex justify-content-sm-center d-flex justify-content-center">
@@ -98,102 +92,102 @@
 
 
 
-            <div class="container body-content" style="width:100%">
-                <div class=" row">
-                    <div class="col-md-8">
-                        <h1 class="TextoEncabezadoMainPageOrange">Venta de mejores materiales de construcción ligera como tablaroca, plafon, durock y muchos más. Contamos con gran variedad de materiales de la mejor calidad, rapidez en la atención y entrega y un excelente servicio.</h1>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="~/img/IGUALAMOS-TU-PRESUPUESTO-300x282.png" />
-                    </div>
-                    <div class=" row">
-                        <div class="col-md-3">
-                            <img src="~/img/35anios.JPG" width="100%" height="80%" />
-                        </div>
-                        <div class="col-md-9">
-                            <img src="~/img/collageprodsminimo.JPG" width="100%" height="100%" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="containerSubElementosIndex row">
-                    <div class="col">
-                        <h1>Sucursales</h1>
-                    </div>
-                </div>
-
-                <div class="containerSubElementosIndex row">
-                    <div class="col-md-4">
-                        <h5 class="TituloIndexSucursales">B. Reyes</h5>
-                        <img src="~/img/Sucs/breyes-1-300x214.png" class="ImgSucursalesIndex" />
-                        <h6 class="DetalleIndexSucursales">Bernardo Reyes No. 4242-A</h6>
-                        <h6 class="DetalleIndexSucursales">Col. Niño Artillero C.P. 64280</h6>
-                        <h6 class="DetalleIndexSucursales">Monterrey N.L.</h6>
-                        <a href="@ConfigurationManager.AppSettings["ComoLlegarBR"];" target="_blank"> <h6 class="DetalleIndexSucursales">Como llegar</h6> </a>
-                        <a href="tel:+528181255400" class="DetalleIndexSucursales"><h6>(81) 8125-5400</h6></a>
-
-                    </div>
-
-                    <div class="col-md-4">
-                        <h5 class="TituloIndexSucursales">Miguel Nieto</h5>
-                        <img src="~/img/Sucs/mnieto-1-300x214.png" class="ImgSucursalesIndex" />
-                        <h6 class="DetalleIndexSucursales">Miguel Nieto No. 807</h6>
-                        <h6 class="DetalleIndexSucursales">Carlos Salazar esquina con Arteaga</h6>
-                        <h6 class="DetalleIndexSucursales">Monterrey N.L.</h6>
-                        <a href="@ConfigurationManager.AppSettings["ComoLlegarMN"];" target="_blank"> <h6 class="DetalleIndexSucursales">Como llegar</h6> </a>
-                        <a href="tel:+528183757500" class="DetalleIndexSucursales"><h6>(81) 8375-7500</h6></a>
-
-                    </div>
-
-                    <div class="col-md-4">
-                        <h5 class="TituloIndexSucursales">La Fe</h5>
-                        <img src="~/img/Sucs/lafe-1-300x214.png" class="ImgSucursalesIndex" />
-                        <h6 class="DetalleIndexSucursales">Av. Acapulco No. 422</h6>
-                        <h6 class="DetalleIndexSucursales">Col. La Fe C.P. 66477</h6>
-                        <h6 class="DetalleIndexSucursales">San Nicolás de los Garza N.L.</h6>
-                        <a href="@ConfigurationManager.AppSettings["ComoLlegarLAFE"];" target="_blank"> <h6 class="DetalleIndexSucursales">Como llegar</h6> </a>
-                        <a href="tel:+528182982000" class="DetalleIndexSucursales"><h6>(81) 8298-2000</h6></a>
-
-                    </div>
-
-                </div>
-
-                <div class="containerSubElementosIndex row">
-                    <div class="col-md-4">
-                        <h5 class="TituloIndexSucursales">Valle</h5>
-                        <img src="~/img/Sucs/valleWEB-300x214.jpg" class="ImgSucursalesIndex" />
-                        <h6 class="DetalleIndexSucursales">Av. Vasconcelos No. 995</h6>
-                        <h6 class="DetalleIndexSucursales">Col. Del Valle C.P. 64220</h6>
-                        <h6 class="DetalleIndexSucursales">San Pedro Garza Garcia N.L.</h6>
-                        <a href="@ConfigurationManager.AppSettings["ComoLlegarVALLE"];" target="_blank"> <h6 class="DetalleIndexSucursales">Como llegar</h6> </a>
-                        <a href="tel:+528119722250" class="DetalleIndexSucursales"><h6>(81) 1972-2250</h6></a>
-
-                    </div>
-
-                    <div class="col-md-4">
-                        <h5 class="TituloIndexSucursales">Saltillo</h5>
-                        <img src="~/img/Sucs/saltilloWEB-300x214.jpg" class="ImgSucursalesIndex" />
-                        <h6 class="DetalleIndexSucursales">Isidro Lopez Zertuche No. 4040-B</h6>
-                        <h6 class="DetalleIndexSucursales">Col. La Salle C.P. 25240</h6>
-                        <h6 class="DetalleIndexSucursales">Saltillo Coahuila</h6>
-                        <a href="@ConfigurationManager.AppSettings["ComoLlegarSALTILLO"];" target="_blank"> <h6 class="DetalleIndexSucursales">Como llegar</h6> </a>
-                        <a href="tel:+52844430-8800" class="DetalleIndexSucursales"><h6>(844) 430-8800</h6></a>
-
-                    </div>
-
-                    <div class="col-md-4">
-                        <h5 class="TituloIndexSucursales">Queretaro</h5>
-                        <img src="~/img/Sucs/lafe-1-300x214.png" class="ImgSucursalesIndex" />
-                        <h6 class="DetalleIndexSucursales">San Diego No. 411-1</h6>
-                        <h6 class="DetalleIndexSucursales">Esquina con Av 5 Febrero</h6>
-                        <h6 class="DetalleIndexSucursales">(A espaldas de Banamex) Qro.</h6>
-                        <a href="@ConfigurationManager.AppSettings["ComoLlegarQRO"];" target="_blank"> <h6 class="DetalleIndexSucursales">Como llegar</h6> </a>
-                        <a href="tel:+524426295840" class="DetalleIndexSucursales"><h6>(442) 629-5840</h6></a>
-                    </div>
-
-                </div>
-
+<div class="container body-content" style="width:100%">
+    <div class=" row">
+        <div class="col-md-8">
+            <h1 class="TextoEncabezadoMainPageOrange">Venta de mejores materiales de construcción ligera como tablaroca, plafon, durock y muchos más. Contamos con gran variedad de materiales de la mejor calidad, rapidez en la atención y entrega y un excelente servicio.</h1>
+        </div>
+        <div class="col-md-3">
+            <img src="~/img/IGUALAMOS-TU-PRESUPUESTO-300x282.png" />
+        </div>
+        <div class=" row">
+            <div class="col-md-3">
+                <img src="~/img/35anios.JPG" width="100%" height="80%" />
             </div>
+            <div class="col-md-9">
+                <img src="~/img/collageprodsminimo.JPG" width="100%" height="100%" />
+            </div>
+        </div>
+    </div>
+
+    <div class="containerSubElementosIndex row">
+        <div class="col">
+            <h1>Sucursales</h1>
+        </div>
+    </div>
+
+    <div class="containerSubElementosIndex row">
+        <div class="col-md-4">
+            <h5 class="TituloIndexSucursales">B. Reyes</h5>
+            <img src="~/img/Sucs/breyes-1-300x214.png" class="ImgSucursalesIndex" />
+            <h6 class="DetalleIndexSucursales">Bernardo Reyes No. 4242-A</h6>
+            <h6 class="DetalleIndexSucursales">Col. Niño Artillero C.P. 64280</h6>
+            <h6 class="DetalleIndexSucursales">Monterrey N.L.</h6>
+            <a href="@ConfigurationManager.AppSettings["ComoLlegarBR"];" target="_blank"> <h6 class="DetalleIndexSucursales">Como llegar</h6> </a>
+            <a href="tel:+528181255400" class="DetalleIndexSucursales"><h6>(81) 8125-5400</h6></a>
+
+        </div>
+
+        <div class="col-md-4">
+            <h5 class="TituloIndexSucursales">Miguel Nieto</h5>
+            <img src="~/img/Sucs/mnieto-1-300x214.png" class="ImgSucursalesIndex" />
+            <h6 class="DetalleIndexSucursales">Miguel Nieto No. 807</h6>
+            <h6 class="DetalleIndexSucursales">Carlos Salazar esquina con Arteaga</h6>
+            <h6 class="DetalleIndexSucursales">Monterrey N.L.</h6>
+            <a href="@ConfigurationManager.AppSettings["ComoLlegarMN"];" target="_blank"> <h6 class="DetalleIndexSucursales">Como llegar</h6> </a>
+            <a href="tel:+528183757500" class="DetalleIndexSucursales"><h6>(81) 8375-7500</h6></a>
+
+        </div>
+
+        <div class="col-md-4">
+            <h5 class="TituloIndexSucursales">La Fe</h5>
+            <img src="~/img/Sucs/lafe-1-300x214.png" class="ImgSucursalesIndex" />
+            <h6 class="DetalleIndexSucursales">Av. Acapulco No. 422</h6>
+            <h6 class="DetalleIndexSucursales">Col. La Fe C.P. 66477</h6>
+            <h6 class="DetalleIndexSucursales">San Nicolás de los Garza N.L.</h6>
+            <a href="@ConfigurationManager.AppSettings["ComoLlegarLAFE"];" target="_blank"> <h6 class="DetalleIndexSucursales">Como llegar</h6> </a>
+            <a href="tel:+528182982000" class="DetalleIndexSucursales"><h6>(81) 8298-2000</h6></a>
+
+        </div>
+
+    </div>
+
+    <div class="containerSubElementosIndex row">
+        <div class="col-md-4">
+            <h5 class="TituloIndexSucursales">Valle</h5>
+            <img src="~/img/Sucs/valleWEB-300x214.jpg" class="ImgSucursalesIndex" />
+            <h6 class="DetalleIndexSucursales">Av. Vasconcelos No. 995</h6>
+            <h6 class="DetalleIndexSucursales">Col. Del Valle C.P. 64220</h6>
+            <h6 class="DetalleIndexSucursales">San Pedro Garza Garcia N.L.</h6>
+            <a href="@ConfigurationManager.AppSettings["ComoLlegarVALLE"];" target="_blank"> <h6 class="DetalleIndexSucursales">Como llegar</h6> </a>
+            <a href="tel:+528119722250" class="DetalleIndexSucursales"><h6>(81) 1972-2250</h6></a>
+
+        </div>
+
+        <div class="col-md-4">
+            <h5 class="TituloIndexSucursales">Saltillo</h5>
+            <img src="~/img/Sucs/saltilloWEB-300x214.jpg" class="ImgSucursalesIndex" />
+            <h6 class="DetalleIndexSucursales">Isidro Lopez Zertuche No. 4040-B</h6>
+            <h6 class="DetalleIndexSucursales">Col. La Salle C.P. 25240</h6>
+            <h6 class="DetalleIndexSucursales">Saltillo Coahuila</h6>
+            <a href="@ConfigurationManager.AppSettings["ComoLlegarSALTILLO"];" target="_blank"> <h6 class="DetalleIndexSucursales">Como llegar</h6> </a>
+            <a href="tel:+52844430-8800" class="DetalleIndexSucursales"><h6>(844) 430-8800</h6></a>
+
+        </div>
+
+        <div class="col-md-4">
+            <h5 class="TituloIndexSucursales">Queretaro</h5>
+            <img src="~/img/Sucs/lafe-1-300x214.png" class="ImgSucursalesIndex" />
+            <h6 class="DetalleIndexSucursales">San Diego No. 411-1</h6>
+            <h6 class="DetalleIndexSucursales">Esquina con Av 5 Febrero</h6>
+            <h6 class="DetalleIndexSucursales">(A espaldas de Banamex) Qro.</h6>
+            <a href="@ConfigurationManager.AppSettings["ComoLlegarQRO"];" target="_blank"> <h6 class="DetalleIndexSucursales">Como llegar</h6> </a>
+            <a href="tel:+524426295840" class="DetalleIndexSucursales"><h6>(442) 629-5840</h6></a>
+        </div>
+
+    </div>
+
+</div>
 
 
 

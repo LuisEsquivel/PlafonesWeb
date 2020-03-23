@@ -560,6 +560,7 @@
     <Content Include="DataSheets\TORNILLO-TEK-P.-DE-BROCA-1″-BOLSA-100-PZ-CABEZA-CORNETA.pdf" />
     <Content Include="DataSheets\TORNILLO-TEK-PLANO-R-12″-BOLSA-100-PZ-CABEZA-EXTRAPLANA.pdf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Generales.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
