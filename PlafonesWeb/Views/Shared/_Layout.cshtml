@@ -4,43 +4,75 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">*@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Scripts/jquery-3.3.1.js"></script>
     <script src="~/Scripts/Generales.js"></script>
     <script src="~/Content/bootstrap.css"></script>
+
+
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+
+        function ShowSearch() {
+
+            $("#ShowSearch").hide();
+            $("#HideSearch").show();
+            $("#busqueda").fadeIn();
+
+        }
+
+        function HideSearch() {
+
+            $("#HideSearch").hide();
+            $("#ShowSearch").show();
+            $("#busqueda").fadeOut();
+
+        }
+
+    </script>
+
+
 </head>
+
 
 
 <body>
 
 
-    @*<div class="container">
-        <div class="row">*@
+    <nav class="sticky-top navbar-fixed-top">
 
-        <nav class="navbar navbar-expand-xl  fixed-top mb-5 navbar-fixed-top" style="background-color:#172C80">
-
+        <div class="navbar navbar-expand-lg navbar-expand-xl mb-5 sticky-top" style="background-color:#172C80">
 
 
             <button class="navbar-toggler navbar-toggler-icon mr-auto mb-5" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span><img src="~/img/MenuPlafones.png" width="50" height="50" /></span>
+
+                <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+
             </button>
 
 
-            <div class="text-center ml-auto " style="position:relative ">
-                @*<a href="@Url.Action("Index", "Home")" style="text-decoration:none"> </a>*@
+            <div class="text-center ml-auto">
+                <a href="@Url.Action("Index", "Home")" style="text-decoration:none"> </a>
 
                 <input type="image"
-                       src="~/img/Logo-plafones-con-eslogan2-1-unsmushed.png" height="50" width="200"
+                       class="mr-1"
+                       src="~/img/Logo-plafones-con-eslogan2-1-unsmushed.png" height="50" width="150"
                        value="Go Somewhere Else"
                        onclick="location.href='@Url.Action("Index", "Home")'" />
 
             </div>
 
 
+
             <div class="collapse navbar-collapse ml-auto" id="navbarTogglerDemo01">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav text-center">
 
                     <li class="formatoItemsMenu nav-item nav-link ">@Html.ActionLink("Inicio", "Index", "Home")</li>
 
@@ -110,68 +142,45 @@
 
                     <li class="nav-item nav-link formatoItemsMenu">@Html.ActionLink("Contacto", "Contact", "Home")</li>
 
+
+
                 </ul>
 
 
-
-                <form class="form-inline my-2 my-lg-0 ml-auto" action="/Productos/GetProducts" method="post">
-                    <input class="form-control mr-sm-2" name="Search" required type="search" placeholder="Buscar Producto" aria-label="Search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" style="background-color:#F08034">Buscar</button>
-                </form>
-
             </div>
+            <span id="ShowSearch" onclick="ShowSearch();" class="ajas mt-2 mr-5"><i class="fa fa-2x fa-search" aria-hidden="true"></i></span>
+            <span id="HideSearch" style="display:none;" onclick="HideSearch();" class="ajas mt-2 mr-5"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
+        </div>
+    </nav>
+   <div class="row mb-5">
+        <form style="display:none;" id="busqueda" class="input-group justify-content-center" action="/Productos/GetProducts" method="post">
+            <input class="form-control col-lg-6 col-md-6" name="Search" required type="search" placeholder="Buscar Producto" aria-label="Search">
+            <button class="rounded input-group-addon text-white" type="submit" style="background-color:#F08034">Buscar</button>
+        </form>
+    </div>
+    <div class="body-content">
+        @RenderBody()
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-submenu a.test').on("click", function (e) {
+                    $(this).next('ul').toggle();
+                    e.stopPropagation();
+                    e.preventDefault();
+                });
+            });
 
 
 
-            @*<form class="form-inline my-2 my-lg-0 ml-auto " action="/Productos/GetProducts" method="post">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar producto" aria-label="Buscar producto" name="searchFilter">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#F08034">Buscar</button>
-            </form>*@
-
-        </nav>
+        </script>
 
 
-        @*</div>
-        </div>*@
+        <br />
+        <br />
+        <br />
 
-
-
-            <div class="body-content">
-
-                @RenderBody()
-                <script>
-                    $(document).ready(function () {
-                        $('.dropdown-submenu a.test').on("click", function (e) {
-                            $(this).next('ul').toggle();
-                            e.stopPropagation();
-                            e.preventDefault();
-                        });
-                    });
-
-
-         
-                </script>
-
-
-                <br />
-                <br />
-                <br />
-
-                <footer class="Myfooter navbar-fixed-bottom fixed-bottom ">
-                    <br />
-                    <p text-color="white">&copy; @DateTime.Now.Year - Plafones e Interiores | Todos los Derechos Reservados | All Rights Reserved | @Html.ActionLink("Aviso de privacidad", "NoticeOfPrivace", "Home") </p>
-
-                </footer>
-
-
-            </div>
-
-
-
-            @Scripts.Render("~/bundles/jquery")
-            @Scripts.Render("~/bundles/bootstrap")
-            @RenderSection("scripts", required: false)
+        <footer class="footer text-white">
+            <p text-color="white">&copy; @DateTime.Now.Year - Plafones e Interiores | Todos los Derechos Reservados | All Rights Reserved | @Html.ActionLink("Aviso de privacidad", "NoticeOfPrivace", "Home") </p>
+        </footer>
+    </div>
 </body>
-
-
 </html>

@@ -1,18 +1,16 @@
-﻿/*body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}*/
+﻿
 
-body {
-    margin :0;
-    padding:0;
+.body-content{
+    position:relative;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+body, html {       
+    
+    width: 100vw;
+    height:100%;
 }
+
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -29,17 +27,6 @@ textarea {
 }
 
 
-/*body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}*/
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-   
-}
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -490,12 +477,15 @@ textarea {
 
 
 
-.Myfooter {
-    bottom: 0;
-    width: 100%;
+.footer {
     background-color: #172C80;
-    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    height: 40px;
     text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 
@@ -506,7 +496,7 @@ textarea {
     top: 0; /*El valor 0 indica que va a quedar arriba de todo*/
     left: 0; /*Para que el menu se ubique siempre en la parte izquierda de la pantalla*/
     width: 100%; /*100% para que ocupe todo el ancho del navegador*/
-    position: relative;
+    /*position: relative;*/
 }
 
 
@@ -562,5 +552,18 @@ option:hover {
 .card {
     min-height: 300px;
 }
+
+
+
+.navbar-toggler-icon {
+    color :white;
+}
+
+.ajas {
+    color: white;
+}
+
+
+
 
 
