@@ -16,11 +16,12 @@ namespace PlafonesWeb.Controllers
     {
 
         private ApplicationDbContext db = new ApplicationDbContext();
+ 
 
+            // GET: Productos
+            public async Task<ActionResult> Index(string Clase, string SubClase)
+           {
 
-        // GET: Productos
-        public async Task<ActionResult> Index(string Clase, string SubClase)
-        {
             if (Clase == null)
             {
                 return View(await db.ProductosModels.ToListAsync());
@@ -119,6 +120,10 @@ namespace PlafonesWeb.Controllers
     
         public async Task<ActionResult> GetProducts(FormCollection formCollection)
         {
+
+
+
+
             if (formCollection.Count > 0)
             {
                 string searchFilter = formCollection[0];
@@ -139,7 +144,7 @@ namespace PlafonesWeb.Controllers
             }
             else
             {
-                return View("Index");
+                return View("Index", db.ProductosModels.ToList());
             }
         }
 

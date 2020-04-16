@@ -4,15 +4,13 @@
 
 @{
     ViewBag.Title = "TABLAROCA, DUROCK Y PLAFONES EN MONTERREY";
-    Layout = "~/Views/Shared/_Layout.cshtml";   
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <script src="~/Scripts/jquery-3.3.1.js"></script>
 
 
-
 <div class="container body-content">
-
 
     @if (@ViewBag.message == "PRODUCTO NO ENCONTRADO")
     {
@@ -26,15 +24,9 @@
 
     }
 
+<div class="containerIndex row my-flex-card">
 
-    <br />
-    <br />
-
-
-
-
-    <div class="containerIndex row my-flex-card">
-
+   
 
         @foreach (var item in Model)
         {
@@ -45,18 +37,18 @@
                 <figure class="card card-product">
 
 
-                  <div class="card-header ColorOrange" style="height:50px;">
-                                <h6>@Html.DisplayFor(modelItem => item.NOM_PROD_VAR)</h6>
-                   </div>
+                    <div class="card-header ColorOrange" style="height:50px;">
+                        <h6>@Html.DisplayFor(modelItem => item.NOM_PROD_VAR)</h6>
+                    </div>
 
 
 
                     <div class="card-img-top img-wrap  justify-content-center ">
 
-                       
-                       @{ 
-                              var absolutePath = Server.MapPath(item.RUTADEFOTO_VAR.ToString());
-         
+
+                        @{
+                            var absolutePath = Server.MapPath(item.RUTADEFOTO_VAR.ToString());
+
                             if (!System.IO.File.Exists(absolutePath))
                             {
                                 item.RUTADEFOTO_VAR = "~/img/Productos/sinimagen.jpg";
@@ -86,38 +78,38 @@
                             @using (Html.BeginForm("DataSheet", "Productos"))
                             {
 
-                        <div class="row justify-content-center ">
+                                <div class="row justify-content-center ">
 
-                            <div class="col-sm-12 col-lg-12">
-                                <a href="~/Productos/Details?id=@item.CVE_PROD_VAR" class="btn btn-primary btn-sm" style="background-color:#F08034"> Detalles </a>
-                            </div>
+                                    <div class="col-sm-12 col-lg-12">
+                                        <a href="~/Productos/Details?id=@item.CVE_PROD_VAR" class="btn btn-primary btn-sm" style="background-color:#F08034"> Detalles </a>
+                                    </div>
 
-                         <div class="mt-1  col-sm-12  col-lg-12">
-                            <input name="FichaTecnicaName" type="hidden" value="@item.FICHA_TECNICA_URL_VAR" />
-                            <button class="btn btn-danger btn-sm" type="submit">
-                                Ficha Técnica
-                                @*<img src="~/img/DisenioDeplegadoProds/icono-ficha-tecnica-1.png"  width="50" height="30">*@
-                            </button>
-                        </div>
-
-
-                               </div>
-
-                                    }
+                                    <div class="mt-1  col-sm-12  col-lg-12">
+                                        <input name="FichaTecnicaName" type="hidden" value="@item.FICHA_TECNICA_URL_VAR" />
+                                        <button class="btn btn-danger btn-sm" type="submit">
+                                            Ficha Técnica
+                                            @*<img src="~/img/DisenioDeplegadoProds/icono-ficha-tecnica-1.png"  width="50" height="30">*@
+                                        </button>
+                                    </div>
 
 
-
-
-                                    <!-- action-wrap -->
                                 </div>
-</figcaption>
+
+
+                            }
+
+                    
+
+                            <!-- action-wrap -->
+                        </div>
+                    </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
-        }
+                                }
 
 
-    </div>
+          
 
 </div>
 
-
+</div>
